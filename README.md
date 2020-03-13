@@ -3,9 +3,9 @@ _(For best results view this file in 'Preview' by right-clicking the file in VSc
 ### Morning
 
 We are going to create a database for an Italian recipe website. The meals on our website will be divided up like so...
-- Course (Starter, Main, Dessert, Drink)
-- Dish (Minestrone, Pepperoni Pizza, Pistachio gelato etc...)
-- Dish-type (Fish, Pizza, Pasta, Wine, Ice-cream, Soup etc...)
+- Courses (Starter, Main, Dessert, Drink)
+- Dishes (Minestrone, Pepperoni Pizza, Pistachio gelato etc...)
+- Dish-types (Fish, Pizza, Pasta, Wine, Ice-cream, Soup etc...)
 
 Each Dish will have a single Course and a single Dish-type. For example, Minestrone will have a Course of 'Starter' and will have a Dish-type of 'Soup'.
 As in any recipe book, there will be many possible dishes for each Course and multiple dishes for each Dish-type. This gives us a good reason for us to separate them out into their own tables.
