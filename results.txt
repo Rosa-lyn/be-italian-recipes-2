@@ -1,0 +1,56 @@
+DROP DATABASE
+CREATE DATABASE
+You are now connected to database "italian_recipes_2" as user "rosalynland".
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 4
+INSERT 0 6
+INSERT 0 9
+ course_id | course  
+-----------+---------
+         1 | starter
+         2 | main
+         3 | dessert
+         4 | drink
+(4 rows)
+
+ dish_type_id | dish_type 
+--------------+-----------
+            1 | fish
+            2 | pizza
+            3 | pasta
+            4 | wine
+            5 | soup
+            6 | ice-cream
+(6 rows)
+
+ dish_id |            dish             | course_id | dish_type_id 
+---------+-----------------------------+-----------+--------------
+       1 | minestrone                  |         1 |            5
+       2 | hawaiian                    |         2 |            2
+       3 | pistachio gelato            |         3 |            6
+       4 | grilled salmon              |         2 |            1
+       5 | rioja                       |         4 |            4
+       6 | tomato gnocchi              |         2 |            3
+       7 | quattro stagioni            |         2 |            2
+       8 | spaghetti carbonara         |         2 |            3
+       9 | spinach and ricotta ravioli |         1 |            3
+(9 rows)
+
+ dish_id |        dish         | course_id | dish_type_id 
+---------+---------------------+-----------+--------------
+       2 | hawaiian            |         2 |            2
+       4 | grilled salmon      |         2 |            1
+       6 | tomato gnocchi      |         2 |            3
+       7 | quattro stagioni    |         2 |            2
+       8 | spaghetti carbonara |         2 |            3
+(5 rows)
+
+ dish_id |            dish             | course_id | dish_type_id 
+---------+-----------------------------+-----------+--------------
+       6 | tomato gnocchi              |         2 |            3
+       8 | spaghetti carbonara         |         2 |            3
+       9 | spinach and ricotta ravioli |         1 |            3
+(3 rows)
+
