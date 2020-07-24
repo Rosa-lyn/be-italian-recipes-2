@@ -62,7 +62,9 @@ VALUES
     ('tomato gnocchi', 2, 3),
     ('capricciosa', 2, 2),
     ('spaghetti bolognese', 2, 3),
-    ('beef ravioli', 1, 3);
+    ('beef ravioli', 1, 3),
+    ('spaghetti carbonara', 2, 3),
+    ('linguini carbonara', 1, 3);
 
 INSERT INTO ingredients
     (ingredient)
@@ -85,7 +87,9 @@ VALUES
     ('pistachios'),
     ('mixed veg'),
     ('salmon'),
-    ('cheese');
+    ('cheese'),
+    ('egg'),
+    ('linguini');
 
 INSERT INTO recipes
     (dish_id, ingredient_id)
@@ -135,22 +139,36 @@ VALUES
     (8, 8),
     (8, 10),
     (8, 11),
-    (8, 12);
+    (8, 12),
+    (9, 1),
+    (9, 3),
+    (9, 7),
+    (9, 11),
+    (9, 13),
+    (9, 19),
+    (9, 20),
+    (10, 1),
+    (10, 3),
+    (10, 11),
+    (10, 13),
+    (10, 19),
+    (10, 20),
+    (10, 21);
 
 -- queries
 
 SELECT * FROM courses;
 SELECT * FROM dish_types;
-SELECT dish_id, dish FROM dishes;
+SELECT * FROM dishes;
 SELECT * FROM ingredients;
--- SELECT * FROM recipes;
+SELECT * FROM recipes;
 
--- -- all the mains
+-- all the mains
 SELECT *
 FROM dishes
 WHERE course_id = 2;
 
--- -- all the pasta dishes
+-- all the pasta dishes
 SELECT *
 FROM dishes
 WHERE dish_type_id = 3;
@@ -193,3 +211,17 @@ INNER JOIN ingredients
     ON recipes.ingredient_id = ingredients.ingredient_id
 WHERE recipes.dish_id = 7;
 
+-- find all the dishes of a certain type which use one ingredient but not another ingredient
+
+-- find all the pasta dishes that have spaghetti or gnocchi
+SELECT dish from recipes
+INNER JOIN dishes
+    ON recipes.dish_id = dishes.dish_id
+INNER JOIN ingredients
+    ON recipes.ingredient_id = ingredients.ingredient_id
+INNER JOIN dish_types
+    ON dishes.dish_type_id = dish_types.dish_type_id
+WHERE dishes.dish_type_id = 3
+AND ingredients.ingredient IN ('gnocchi', 'spaghetti');
+
+-- find all the pasta dishes that have spaghetti, gnocchi or linguini but no cheese
