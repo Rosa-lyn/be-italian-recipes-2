@@ -91,8 +91,9 @@ INSERT INTO recipes
 VALUES
     (1, 1),
     (1, 2),
-    (1, 12),
+    (1, 11),
     (1, 13),
+    (1, 14),
     (2, 1),
     (2, 2),
     (2, 3),
@@ -150,3 +151,14 @@ SELECT * FROM recipes;
 -- SELECT *
 -- FROM dishes
 -- WHERE dish_type_id = 3;
+
+-- return a recipe by its name and all the ingredients needed to cook it
+-- tomato soup recipe
+SELECT dish, ingredient FROM recipes
+INNER JOIN dishes
+ON recipes.dish_id = dishes.dish_id
+INNER JOIN ingredients
+ON recipes.ingredient_id = ingredients.ingredient_id
+WHERE recipes.dish_id = 1;
+
+
