@@ -84,7 +84,8 @@ VALUES
     ('sugar'),
     ('pistachios'),
     ('mixed veg'),
-    ('salmon');
+    ('salmon'),
+    ('cheese');
 
 INSERT INTO recipes
     (dish_id, ingredient_id)
@@ -101,6 +102,7 @@ VALUES
     (2, 5),
     (2, 9),
     (2, 13),
+    (2, 19),
     (3, 14),
     (3, 15),
     (3, 16),
@@ -119,6 +121,7 @@ VALUES
     (6, 4),
     (6, 12),
     (6, 13),
+    (6, 19),
     (7, 1),
     (7, 2),
     (7, 7),
@@ -138,27 +141,55 @@ VALUES
 
 SELECT * FROM courses;
 SELECT * FROM dish_types;
-SELECT * FROM dishes;
+SELECT dish_id, dish FROM dishes;
 SELECT * FROM ingredients;
-SELECT * FROM recipes;
+-- SELECT * FROM recipes;
 
 -- -- all the mains
--- SELECT *
--- FROM dishes
--- WHERE course_id = 2;
+SELECT *
+FROM dishes
+WHERE course_id = 2;
 
 -- -- all the pasta dishes
--- SELECT *
--- FROM dishes
--- WHERE dish_type_id = 3;
+SELECT *
+FROM dishes
+WHERE dish_type_id = 3;
 
 -- return a recipe by its name and all the ingredients needed to cook it
+
 -- tomato soup recipe
-SELECT dish, ingredient FROM recipes
+SELECT dish, ingredient
+FROM recipes
 INNER JOIN dishes
-ON recipes.dish_id = dishes.dish_id
+    ON recipes.dish_id = dishes.dish_id
 INNER JOIN ingredients
-ON recipes.ingredient_id = ingredients.ingredient_id
+    ON recipes.ingredient_id = ingredients.ingredient_id
 WHERE recipes.dish_id = 1;
 
+-- hawaiian pizza recipe
+SELECT dish, ingredient
+FROM recipes
+INNER JOIN dishes
+    ON recipes.dish_id = dishes.dish_id
+INNER JOIN ingredients
+    ON recipes.ingredient_id = ingredients.ingredient_id
+WHERE recipes.dish_id = 2;
+
+-- pistachio gelato recipe
+SELECT dish, ingredient
+FROM recipes
+INNER JOIN dishes
+    ON recipes.dish_id = dishes.dish_id
+INNER JOIN ingredients
+    ON recipes.ingredient_id = ingredients.ingredient_id
+WHERE recipes.dish_id = 3;
+
+-- spag bol recipe
+SELECT dish, ingredient
+FROM recipes
+INNER JOIN dishes
+    ON recipes.dish_id = dishes.dish_id
+INNER JOIN ingredients
+    ON recipes.ingredient_id = ingredients.ingredient_id
+WHERE recipes.dish_id = 7;
 
